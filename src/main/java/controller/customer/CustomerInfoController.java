@@ -39,8 +39,28 @@ public class CustomerInfoController implements CustomerService{
     }
 
     @Override
-    public void updateCustomer(String id, String title, String name, LocalDate DOB, Double salary, String address, String city, String province, String postalCode) {
+    public void updateCustomer(String title, String name, LocalDate DOB, Double salary, String address, String city, String province, String postalCode,String id) {
 
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade_smd", "root", "20031207");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("UPDATE customer SET CustTitle = ? , CustName = ? , DOB = ? , salary = ? , CustAddress = ? , City = ? , Province = ? , PostalCode = ? WHERE CustID = ?");
+
+            preparedStatement.setObject(1,title);
+            preparedStatement.setObject(2,name);
+            preparedStatement.setObject(3,DOB);
+            preparedStatement.setObject(4,salary);
+            preparedStatement.setObject(5,address);
+            preparedStatement.setObject(6,city);
+            preparedStatement.setObject(7,province);
+            preparedStatement.setObject(8,postalCode);
+            preparedStatement.setObject(9,id);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
     }
 
     @Override
@@ -75,6 +95,18 @@ public class CustomerInfoController implements CustomerService{
 
     @Override
     public void deleteCustomer(String id) {
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade_smd", "root", "20031207");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("DELETE FROM customer WHERE CustID = ?");
+
+            preparedStatement.setObject(1,id);
+
+            preparedStatement.executeUpdate();
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
