@@ -8,20 +8,19 @@
 <?import javafx.scene.layout.AnchorPane?>
 <?import javafx.scene.text.Font?>
 
-
-<AnchorPane prefHeight="567.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerFormController">
+<AnchorPane prefHeight="567.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customer.CustomerFormController">
    <children>
       <TableView layoutX="23.0" layoutY="259.0" prefHeight="294.0" prefWidth="876.0">
          <columns>
-            <TableColumn prefWidth="75.20001411437988" text="Customer ID" />
-            <TableColumn prefWidth="91.99996185302734" text="Customer Title" />
-            <TableColumn minWidth="0.0" prefWidth="134.39996337890625" text="Customer Name" />
-            <TableColumn prefWidth="40.0" text="DOB" />
-            <TableColumn prefWidth="68.79998779296875" text="Salary" />
-            <TableColumn prefWidth="171.19992065429688" text="Customer Address" />
-            <TableColumn prefWidth="76.0" text="City" />
-            <TableColumn prefWidth="101.5999755859375" text="Province" />
-            <TableColumn prefWidth="116.0" text="Postal Code" />
+            <TableColumn fx:id="colCustomerId" prefWidth="75.20001411437988" text="Customer ID" />
+            <TableColumn fx:id="colCustomerTitle" prefWidth="91.99996185302734" text="Customer Title" />
+            <TableColumn fx:id="colCustomerName" minWidth="0.0" prefWidth="134.39996337890625" text="Customer Name" />
+            <TableColumn fx:id="colDOB" prefWidth="40.0" text="DOB" />
+            <TableColumn fx:id="colSalary" prefWidth="68.79998779296875" text="Salary" />
+            <TableColumn fx:id="colAddress" prefWidth="171.19992065429688" text="Customer Address" />
+            <TableColumn fx:id="colCity" prefWidth="76.0" text="City" />
+            <TableColumn fx:id="colProvince" prefWidth="101.5999755859375" text="Province" />
+            <TableColumn fx:id="colPostalCode" prefWidth="116.0" text="Postal Code" />
          </columns>
       </TableView>
       <Label layoutX="379.0" layoutY="14.0" prefHeight="42.0" prefWidth="162.0" text="Customers">
@@ -29,18 +28,15 @@
             <Font name="Calibri Bold" size="36.0" />
          </font>
       </Label>
-      <TextField layoutX="707.0" layoutY="71.0" promptText="Salary" />
-      <TextField layoutX="64.0" layoutY="71.0" promptText="Customer Name" />
-      <TextField layoutX="150.0" layoutY="110.0" />
-      <TextField layoutX="310.0" layoutY="110.0" />
-      <TextField layoutX="226.0" layoutY="70.0" promptText="Customer Title" />
-      <TextField layoutX="385.0" layoutY="71.0" promptText="Customer Name" />
-      <TextField layoutX="547.0" layoutY="71.0" promptText="DOB" />
-      <TextField layoutX="471.0" layoutY="110.0" />
-      <TextField layoutX="632.0" layoutY="110.0" />
-      <TextField layoutX="215.0" layoutY="150.0" />
-      <TextField layoutX="375.0" layoutY="150.0" />
-      <TextField layoutX="535.0" layoutY="150.0" />
+      <TextField fx:id="txtSalary" layoutX="707.0" layoutY="71.0" promptText="Salary" />
+      <TextField fx:id="txtCustomerId" layoutX="64.0" layoutY="71.0" promptText="Customer ID" />
+      <TextField fx:id="txtAddress" layoutX="150.0" layoutY="110.0" promptText="Address" />
+      <TextField fx:id="txtCity" layoutX="310.0" layoutY="110.0" promptText="City" />
+      <TextField fx:id="txtCustomerTitle" layoutX="226.0" layoutY="70.0" promptText="Customer Title" />
+      <TextField fx:id="txtCustomerName" layoutX="385.0" layoutY="71.0" promptText="Customer Name" />
+      <TextField fx:id="txtDOB" layoutX="547.0" layoutY="71.0" promptText="DOB" />
+      <TextField fx:id="txtProvince" layoutX="471.0" layoutY="110.0" promptText="Province" />
+      <TextField fx:id="txtPostalCode" layoutX="632.0" layoutY="110.0" promptText="Postal Code" />
       <Button layoutX="296.0" layoutY="191.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="79.0" text="Add" />
       <Button layoutX="386.0" layoutY="191.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="79.0" text="Update" />
       <Button layoutX="475.0" layoutY="191.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="79.0" text="Delete" />
