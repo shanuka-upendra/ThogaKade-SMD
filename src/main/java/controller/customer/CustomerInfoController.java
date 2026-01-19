@@ -111,7 +111,33 @@ public class CustomerInfoController implements CustomerService{
     }
 
     @Override
-    public CustomerDto searchCustomer(Integer id) {
+    public CustomerDto searchCustomer(String id) {
+
+        try {
+            Connection connection = DriverManager.getConnection("jdbc:mysql://localhost:3306/thogakade_smd", "root", "20031207");
+
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM customer WHERE CustID = ?");
+
+            preparedStatement.setString(1,id);
+
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+            if(resultSet.next()){
+                return new CustomerDto(
+                        resultSet.getString("CustID"),
+                        resultSet.getString("CustTitle"),
+                        resultSet.getString("CustName"),
+                        resultSet.getDate("DOB"),
+                        resultSet.getDouble("salary"),
+                        resultSet.getString("CustAddress"),
+                        resultSet.getString("City"),
+                        resultSet.getString("Province"),
+                        resultSet.getString("PostalCode")
+                );
+            }
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return null;
     }
 

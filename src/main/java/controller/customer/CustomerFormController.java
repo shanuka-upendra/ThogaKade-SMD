@@ -4,10 +4,7 @@ import controller.model.CustomerDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
-import javafx.scene.control.DatePicker;
-import javafx.scene.control.TableColumn;
-import javafx.scene.control.TableView;
-import javafx.scene.control.TextField;
+import javafx.scene.control.*;
 import javafx.scene.control.cell.PropertyValueFactory;
 
 import java.net.URL;
@@ -123,6 +120,21 @@ public class CustomerFormController implements Initializable {
 
     @FXML
     void btnSearchCustomerOnAction(ActionEvent event) {
+        CustomerDto customer = customerService.searchCustomer(txtCustomerId.getText());
+
+        if(customer != null) {
+            setDataToFields(customer);
+
+            for (CustomerDto item : tblCustomers.getItems()){
+                if(item.getId().equals(customer.getId())){
+                    tblCustomers.getSelectionModel().select(item);
+                    tblCustomers.scrollTo(item);
+                    break;
+                }
+            }
+        }else {
+            new Alert(Alert.AlertType.WARNING,"Customer Not Found!").show();
+        }
 
     }
 
