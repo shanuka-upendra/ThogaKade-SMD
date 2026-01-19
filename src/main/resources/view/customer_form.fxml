@@ -10,7 +10,7 @@
 
 <AnchorPane prefHeight="567.0" prefWidth="921.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customer.CustomerFormController">
    <children>
-      <TableView layoutX="23.0" layoutY="259.0" prefHeight="294.0" prefWidth="876.0">
+      <TableView fx:id="tblCustomers" layoutX="23.0" layoutY="259.0" prefHeight="294.0" prefWidth="876.0">
          <columns>
             <TableColumn fx:id="colCustomerId" prefWidth="75.20001411437988" text="Customer ID" />
             <TableColumn fx:id="colCustomerTitle" prefWidth="91.99996185302734" text="Customer Title" />
@@ -37,9 +37,9 @@
       <TextField fx:id="txtDOB" layoutX="547.0" layoutY="71.0" promptText="DOB" />
       <TextField fx:id="txtProvince" layoutX="471.0" layoutY="110.0" promptText="Province" />
       <TextField fx:id="txtPostalCode" layoutX="632.0" layoutY="110.0" promptText="Postal Code" />
-      <Button layoutX="296.0" layoutY="191.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="79.0" text="Add" />
-      <Button layoutX="386.0" layoutY="191.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="79.0" text="Update" />
-      <Button layoutX="475.0" layoutY="191.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="79.0" text="Delete" />
-      <Button layoutX="565.0" layoutY="191.0" mnemonicParsing="false" prefHeight="42.0" prefWidth="79.0" text="Search" />
+      <Button layoutX="296.0" layoutY="191.0" mnemonicParsing="false" onAction="#btnAddCustomerOnAction" prefHeight="42.0" prefWidth="79.0" text="Add" />
+      <Button layoutX="386.0" layoutY="191.0" mnemonicParsing="false" onAction="#btnUpdateCustomerOnAction" prefHeight="42.0" prefWidth="79.0" text="Update" />
+      <Button layoutX="475.0" layoutY="191.0" mnemonicParsing="false" onAction="#btnDeleteCustomerOnAction" prefHeight="42.0" prefWidth="79.0" text="Delete" />
+      <Button layoutX="565.0" layoutY="191.0" mnemonicParsing="false" onAction="#btnSearchCustomerOnAction" prefHeight="42.0" prefWidth="79.0" text="Search" />
    </children>
 </AnchorPane>

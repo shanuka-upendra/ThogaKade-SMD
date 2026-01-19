@@ -5,18 +5,20 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 import lombok.ToString;
 
+import java.util.Date;
+
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
 @ToString
 public class CustomerDto {
-    private Integer id;
+    private String id;
     private String title;
     private String name;
-    private String DOB;
+    private Date DOB;
     private Double salary;
     private String address;
     private String city;
     private String province;
-    private Integer postalCode;
+    private String postalCode;
 }
