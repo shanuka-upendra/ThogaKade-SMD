@@ -3,12 +3,13 @@ package controller.customer;
 import controller.model.CustomerDto;
 import javafx.collections.ObservableList;
 
-import java.util.List;
+import java.time.LocalDate;
+import java.util.Date;
 
 public interface CustomerService {
-    void addCustomer();
-    void updateCustomer();
-    void deleteCustomer();
+    void addCustomer(String id, String title, String name, LocalDate DOB, Double salary, String address, String city, String province, String postalCode);
+    void updateCustomer(String id, String title, String name, LocalDate DOB,Double salary,String address,String city,String province,String postalCode);
     ObservableList<CustomerDto> getAllCustomers();
-    CustomerDto searchCustomer();
+    void deleteCustomer(String id);
+    CustomerDto searchCustomer(Integer id);
 }
