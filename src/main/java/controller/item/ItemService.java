@@ -1,0 +1,13 @@
+package controller.item;
+
+import controller.model.ItemDto;
+import javafx.collections.ObservableList;
+
+public interface ItemService{
+    void addItem(String code, String desc, String size, Double price, Integer qty);
+    void updateItem(String desc, String size, Double price, Integer qty,String code);
+    void deleteItem(String code);
+    ItemDto searchItem(String code);
+    ObservableList<ItemDto> getAllItems();
+
+}
