@@ -26,7 +26,13 @@ public class DashboardFormController {
 
     @FXML
     void btnItemOnAction(ActionEvent event) {
-
+        try {
+            stage.setScene(new Scene(FXMLLoader.load(getClass().getResource("/view/item_form.fxml"))));
+        } catch (IOException e) {
+            throw new RuntimeException(e);
+        }
+        stage.show();
+        stage.setTitle("Item");
     }
 
     @FXML

@@ -11,7 +11,7 @@
 
 <AnchorPane prefHeight="650.0" prefWidth="960.0" xmlns="http://javafx.com/javafx/25" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.customer.CustomerFormController">
    <children>
-      <TableView fx:id="tblCustomers" layoutX="8.0" layoutY="267.0" prefHeight="375.0" prefWidth="948.0">
+      <TableView fx:id="tblCustomers" layoutX="8.0" layoutY="267.0" prefHeight="387.0" prefWidth="948.0">
          <columns>
             <TableColumn fx:id="colCustomerId" prefWidth="75.20001411437988" text="Customer ID" />
             <TableColumn fx:id="colCustomerTitle" prefWidth="66.66670989990234" text="Title" />
