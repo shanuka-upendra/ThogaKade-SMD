@@ -51,21 +51,38 @@ public class ItemFormController implements Initializable {
 
     @FXML
     void btnAddItemOnAction(ActionEvent event) {
+        String code = txtItemCode.getText();
+        String desc = txtDesc.getText();
+        String packSize = txtPackSize.getText();
+        Double price = Double.valueOf(txtUnitPrice.getText());
+        Integer qty = Integer.valueOf(txtQty.getText());
 
+        itemService.addItem(code,desc,packSize,price,qty);
+        loadItemTable();
     }
 
     @FXML
-    void btnClearItemOnAction(ActionEvent event) {
+    void btnSearchItemOnAction(ActionEvent event) {
 
     }
 
     @FXML
     void btnDeleteItemOnAction(ActionEvent event) {
+        itemService.deleteItem(txtItemCode.getText());
+        loadItemTable();
 
     }
 
     @FXML
     void btnUpdateItemOnAction(ActionEvent event) {
+        String code = txtItemCode.getText();
+        String desc = txtDesc.getText();
+        String packSize = txtPackSize.getText();
+        Double price = Double.valueOf(txtUnitPrice.getText());
+        Integer qty = Integer.valueOf(txtQty.getText());
+
+        itemService.updateItem(desc,packSize,price,qty,code);
+        loadItemTable();
 
     }
 

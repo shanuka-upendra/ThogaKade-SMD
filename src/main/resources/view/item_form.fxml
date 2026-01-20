@@ -35,7 +35,7 @@
             <Button layoutX="233.0" layoutY="147.0" mnemonicParsing="false" onAction="#btnAddItemOnAction" prefHeight="43.0" prefWidth="96.0" text="Add" />
             <Button layoutX="344.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnUpdateItemOnAction" prefHeight="43.0" prefWidth="96.0" text="Update" />
             <Button layoutX="454.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnDeleteItemOnAction" prefHeight="43.0" prefWidth="96.0" text="Delete" />
-            <Button layoutX="564.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnClearItemOnAction" prefHeight="43.0" prefWidth="96.0" text="Clear" />
+            <Button layoutX="564.0" layoutY="148.0" mnemonicParsing="false" onAction="#btnSearchItemOnAction" prefHeight="43.0" prefWidth="96.0" text="Search" />
          </children>
       </AnchorPane>
    </children>
