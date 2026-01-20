@@ -67,6 +67,25 @@ public class ItemInfoFormController implements ItemService{
 
     @Override
     public ItemDto searchItem(String code) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+            PreparedStatement preparedStatement = connection.prepareStatement("SELECT * FROM item WHERE ItemCode = ?");
+            preparedStatement.setString(1,code);
+            ResultSet resultSet = preparedStatement.executeQuery();
+
+           while (resultSet.next()){
+               return new ItemDto(
+                       resultSet.getString("ItemCode"),
+                       resultSet.getString("Description"),
+                       resultSet.getString("PackSize"),
+                       resultSet.getDouble("UnitPrice"),
+                       resultSet.getInt("QtyOnHand")
+               );
+           }
+
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
         return null;
     }
 

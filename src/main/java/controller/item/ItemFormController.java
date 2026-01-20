@@ -4,6 +4,7 @@ import controller.model.ItemDto;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
+import javafx.scene.control.Alert;
 import javafx.scene.control.TableColumn;
 import javafx.scene.control.TableView;
 import javafx.scene.control.TextField;
@@ -63,7 +64,21 @@ public class ItemFormController implements Initializable {
 
     @FXML
     void btnSearchItemOnAction(ActionEvent event) {
+        ItemDto item = itemService.searchItem(txtItemCode.getText());
 
+        if(item != null){
+            setDataToFields(item);
+
+            for (ItemDto items : tblItems.getItems()){
+                if(items.getItemCode().equals(item.getItemCode())){
+                    tblItems.getSelectionModel().select(items);
+                    tblItems.scrollTo(items);
+                    break;
+                }
+            }
+        }else{
+            new Alert(Alert.AlertType.WARNING,"Item Not Found!").show();
+        }
     }
 
     @FXML
@@ -101,5 +116,13 @@ public class ItemFormController implements Initializable {
 
     void loadItemTable(){
         tblItems.setItems(itemService.getAllItems());
+    }
+
+    void setDataToFields(ItemDto item){
+        txtItemCode.setText(item.getItemCode());
+        txtDesc.setText(item.getDescription());
+        txtPackSize.setText(item.getPackSize());
+        txtUnitPrice.setText(String.valueOf(item.getPrice()));
+        txtQty.setText(String.valueOf(item.getQty()));
     }
 }
