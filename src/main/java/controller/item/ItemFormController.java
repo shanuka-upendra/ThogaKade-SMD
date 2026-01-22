@@ -60,6 +60,7 @@ public class ItemFormController implements Initializable {
 
         itemService.addItem(code,desc,packSize,price,qty);
         loadItemTable();
+        clearText();
     }
 
     @FXML
@@ -85,6 +86,7 @@ public class ItemFormController implements Initializable {
     void btnDeleteItemOnAction(ActionEvent event) {
         itemService.deleteItem(txtItemCode.getText());
         loadItemTable();
+        clearText();
 
     }
 
@@ -98,6 +100,7 @@ public class ItemFormController implements Initializable {
 
         itemService.updateItem(desc,packSize,price,qty,code);
         loadItemTable();
+        clearText();
 
     }
 
@@ -124,5 +127,13 @@ public class ItemFormController implements Initializable {
         txtPackSize.setText(item.getPackSize());
         txtUnitPrice.setText(String.valueOf(item.getPrice()));
         txtQty.setText(String.valueOf(item.getQty()));
+    }
+
+    void clearText(){
+        txtItemCode.clear();
+        txtDesc.clear();
+        txtPackSize.clear();
+        txtUnitPrice.clear();
+        txtQty.clear();
     }
 }
