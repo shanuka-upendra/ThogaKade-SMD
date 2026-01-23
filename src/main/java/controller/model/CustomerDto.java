@@ -21,4 +21,9 @@ public class CustomerDto {
     private String city;
     private String province;
     private String postalCode;
+
+    public CustomerDto(String custID, String custName) {
+        this.id = custID;
+        this.name = custName;
+    }
 }
