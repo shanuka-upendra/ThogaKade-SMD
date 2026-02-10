@@ -101,6 +101,11 @@ public class PlaceOrderFormContoller implements Initializable {
 
     @FXML
     void btnPlaceOrderOnAction(ActionEvent event) {
+        try {
+            Connection connection = DBConnection.getInstance().getConnection();
+        } catch (SQLException e) {
+            throw new RuntimeException(e);
+        }
 
     }
 
